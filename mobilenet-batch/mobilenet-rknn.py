@@ -63,7 +63,7 @@ if __name__ == '__main__':
     # Build model
     print('--> Building model')
     do_quant = True if (args.dtype == 'i8' or args.dtype == 'u8') else False
-    ret = rknn.build(do_quantization=do_quant, dataset=DATASET_PATH)
+    ret = rknn.build(do_quantization=do_quant, dataset=DATASET_PATH, rknn_batch_size=8)
     if ret != 0:
         print('Build model failed!')
         exit(ret)
